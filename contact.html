@@ -17,10 +17,10 @@
       <a class="brand" href="index.html">Anika Tahsin</a>
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="index.html">About</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="experience.html">Education &amp; Experience</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="index.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="experience.html">Education &amp; Experience</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
         <button class="icon-btn theme-toggle" aria-label="Toggle dark mode">☾</button>
         <button class="icon-btn menu-toggle" aria-label="Open menu">☰</button>
@@ -47,27 +47,11 @@
     <main class="content">
       <h1>Let's Connect!</h1>
       <p class="page-intro">I'm happy to talk about research and collaborations.</p>
-      <div class="two-col">
-        <section>
-          <ul class="contact-list">
-            <li><span class="ico"><i class="fa-solid fa-envelope"></i></span><div><div class="k">Email</div><a href="mailto:tahsinanika28@gmail.com">tahsinanika28@gmail.com</a><br><a href="mailto:1808031@ipe.buet.ac.bd">1808031@ipe.buet.ac.bd</a></div></li>
-            <li><span class="ico"><i class="fa-brands fa-github"></i></span><div><div class="k">GitHub</div><a href="https://github.com/anikatultul2000">github.com/anikatultul2000</a></div></li>
-            <li><span class="ico"><i class="fa-solid fa-location-dot"></i></span><div><div class="k">Location</div>Dhaka, Bangladesh</div></li>
-          </ul>
-        </section>
-        <!-- Messages are delivered to Gmail via FormSubmit (formsubmit.co).
-             The very first submission sends an activation email that must be confirmed once. -->
-        <form id="contact-form">
-          <div class="row">
-            <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-          </div>
-          <div class="field"><label for="subject">Subject</label><input id="subject" name="subject"></div>
-          <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-          <button class="btn" type="submit">Send message</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
+      <ul class="contact-list">
+        <li><span class="ico"><i class="fa-solid fa-envelope"></i></span><div><div class="k">Email</div><a href="mailto:tahsinanika28@gmail.com">tahsinanika28@gmail.com</a><br><a href="mailto:1808031@ipe.buet.ac.bd">1808031@ipe.buet.ac.bd</a></div></li>
+        <li><span class="ico"><i class="fa-brands fa-github"></i></span><div><div class="k">GitHub</div><a href="https://github.com/anikatultul2000">github.com/anikatultul2000</a></div></li>
+        <li><span class="ico"><i class="fa-solid fa-location-dot"></i></span><div><div class="k">Location</div>Dhaka, Bangladesh</div></li>
+      </ul>
 
       <blockquote class="quote">
         <p>“You miss 100% of the shots you don’t take. <span class="inner-cite">— Wayne Gretzky</span>”</p>
@@ -80,43 +64,5 @@
     <div class="container">© <span class="year"></span> Anika Tahsin</div>
   </footer>
 
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const f = e.target;
-      const btn = f.querySelector("button");
-      const status = f.querySelector(".form-status");
-      btn.disabled = true;
-      btn.textContent = "Sending…";
-      status.className = "form-status";
-      status.textContent = "";
-      try {
-        const res = await fetch("https://formsubmit.co/ajax/tahsinanika28@gmail.com", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            name: f.name.value,
-            email: f.email.value,
-            _replyto: f.email.value,
-            _subject: `Website message: ${f.subject.value || "(no subject)"}`,
-            message: f.message.value,
-            _template: "table",
-            _captcha: "false",
-          }),
-        });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok || data.success === "false") throw new Error(data.message || res.statusText);
-        f.reset();
-        status.classList.add("ok");
-        status.textContent = "Thanks! Your message has been sent. I'll get back to you soon.";
-      } catch (err) {
-        status.classList.add("err");
-        status.innerHTML = 'Sorry, the message could not be sent. Please email me directly at <a href="mailto:tahsinanika28@gmail.com">tahsinanika28@gmail.com</a>.';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = "Send message";
-      }
-    });
-  </script>
 </body>
 </html>

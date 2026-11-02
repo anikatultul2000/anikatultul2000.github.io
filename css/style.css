@@ -180,7 +180,7 @@ p { margin: 0 0 .9em; }
 .skills dd { margin: 0; }
 
 /* ===== Contact ===== */
-.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list { list-style: none; padding: 0; margin: 0; max-width: 560px; }
 .contact-list li { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: center; }
 .contact-list li:last-child { border-bottom: 0; }
 .contact-list .ico {
@@ -189,19 +189,6 @@ p { margin: 0 0 .9em; }
 }
 .contact-list .k { font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
 .contact-list a { word-break: break-all; }
-form label { display: block; font-weight: 500; font-size: .9rem; margin-bottom: 4px; }
-form .field { margin-bottom: 14px; }
-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-input, textarea {
-  width: 100%; padding: 10px 14px; font: inherit; color: var(--text);
-  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 8px;
-}
-input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
-textarea { min-height: 130px; resize: vertical; }
-.btn:disabled { opacity: .6; cursor: wait; }
-.form-status { margin: 12px 0 0; font-size: .92rem; }
-.form-status.ok { color: #3f8f5a; }
-.form-status.err { color: var(--accent); }
 
 .quote {
   margin: 2.4rem 0 0; padding: 18px 24px; border-left: 4px solid var(--maroon);
@@ -243,5 +230,5 @@ textarea { min-height: 130px; resize: vertical; }
   .profile-links a { padding: 6px; }
   .sidebar .btn { width: auto; }
   .t-item ul { columns: 1; }
-  .scores, form .row { grid-template-columns: 1fr; }
+  .scores { grid-template-columns: 1fr; }
 }
